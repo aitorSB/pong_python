@@ -1,16 +1,16 @@
 import defines
 
+
 class Ball:
     def __init__(self, fichero_imagen):
-        
-        self.imagen           =self.cargarImagen(fichero_imagen)
+        self.imagen = self.cargarImagen(fichero_imagen)
         self.ancho, self.alto = self.imagen.get_size()
 
-        self.x                = defines.VENTANA_HORIZONTAL / 2 - self.ancho / 2
-        self.y                = defines.VENTANA_VERTICAL / 2 - self.alto / 2
+        self.x = defines.VENTANA_HORIZONTAL / 2 - self.ancho / 2
+        self.y = defines.VENTANA_VERTICAL / 2 - self.alto / 2
 
-        self.dir_x            = defines.random.choice([-5, 5])
-        self.dir_y            = defines.random.choice([-5, 5])
+        self.dir_x = defines.random.choice([-5, 5])
+        self.dir_y = defines.random.choice([-5, 5])
 
     def mover(self):
         self.x += self.dir_x
