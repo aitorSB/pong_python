@@ -1,6 +1,6 @@
-import defines
-from pelota import Pelota
-from raqueta import Raqueta
+from defines import defines
+from classes.pelota import Pelota
+from classes.raqueta import Raqueta
 
 
 def main():
@@ -40,16 +40,14 @@ def main():
         texto = f"{pelota.puntuacion} : {pelota.puntuacion_ia}"
         letrero = fuente.render(texto, False, defines.COLOR_TEXTO)
         ventana.blit(letrero, (
-            defines.VENTANA_HORIZONTAL / 2 - fuente.size(texto)[0] / 2, 50))
+            int(defines.VENTANA_HORIZONTAL / 2 - fuente.size(texto)[0] / 2), 50))
 
         if not pause:
             textoPausa = f"{defines.TEXTO_PAUSA}"
             letreroPausa = (fuente.render(textoPausa,
                 False, defines.COLOR_TEXTO))
             ventana.blit(letreroPausa, (
-                (defines.VENTANA_HORIZONTAL / 2 -
-                    fuente.size(textoPausa)[0] / 2),
-                defines.VENTANA_VERTICAL / 2))
+                (int(defines.VENTANA_HORIZONTAL / 2 - fuente.size(textoPausa)[0] / 2)), int(defines.VENTANA_VERTICAL / 2)))
 
         for event in defines.pygame.event.get():
             if event.type == defines.pygame.QUIT:

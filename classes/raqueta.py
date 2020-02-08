@@ -1,4 +1,4 @@
-import defines
+from defines import defines
 
 
 class Raqueta:
